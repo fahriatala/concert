@@ -1,4 +1,4 @@
-CREATE TABLE tickets (
+CREATE TABLE ticket (
     id INT AUTO_INCREMENT PRIMARY KEY,
     concert_id INT NOT NULL,
     ticket_class VARCHAR(255) NOT NULL,
