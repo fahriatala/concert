@@ -9,5 +9,5 @@ CREATE TABLE ticket (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     deleted_at TIMESTAMP NULL,
-    FOREIGN KEY (concert_id) REFERENCES concerts(id)
+    FOREIGN KEY (concert_id) REFERENCES concert(id)
 );

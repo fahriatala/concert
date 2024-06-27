@@ -1,4 +1,4 @@
-package com.example.concert.service.TicketService;
+package com.example.concert.service.ticket;
 
 import com.example.concert.config.exception.AppException;
 import com.example.concert.config.exception.DataNotFoundException;

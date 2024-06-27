@@ -6,5 +6,5 @@ CREATE TABLE purchase (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     deleted_at TIMESTAMP NULL,
-    FOREIGN KEY (ticket_id) REFERENCES tickets(id)
+    FOREIGN KEY (ticket_id) REFERENCES ticket(id)
 );

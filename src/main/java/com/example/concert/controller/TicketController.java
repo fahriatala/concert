@@ -3,7 +3,7 @@ package com.example.concert.controller;
 import com.example.concert.config.base.AbstractResponseHandler;
 import com.example.concert.config.base.ResultResponse;
 import com.example.concert.model.request.TicketRequest;
-import com.example.concert.service.TicketService.TicketService;
+import com.example.concert.service.ticket.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
