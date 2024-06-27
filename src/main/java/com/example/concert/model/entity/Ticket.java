@@ -30,6 +30,9 @@ public class Ticket {
     @Column(name = "ticket_total")
     private Integer ticketTotal;
 
+    @Column(name = "ticket_remaining")
+    private Integer ticketRemaining;
+
     @Column(name = "ticket_amount")
     private Double ticketAmount;
 

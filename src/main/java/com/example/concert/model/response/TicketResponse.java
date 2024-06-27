@@ -8,4 +8,5 @@ public class TicketResponse {
     private String ticketClass;
     private Integer ticketTotal;
     private Double ticketAmount;
+    private String ticketStatus;
 }
