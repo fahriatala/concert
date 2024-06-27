@@ -11,7 +11,7 @@ This version of application requires the following dependencies
 
 ## Import Data
 
-Look at package resources -> db -> migration on the project. We are using flyway to migrate the database
+We are using flyway to migrate the database. You can take a look at package resources -> db -> migration on the project
 
 
 ## Postman Documentation
