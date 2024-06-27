@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/concerts")
 public class ConcertController extends AbstractResponseHandler {
@@ -31,6 +33,12 @@ public class ConcertController extends AbstractResponseHandler {
     public ResponseEntity<ResultResponse<TicketConcertResponse>> getConcertWithTickets(@PathVariable Long concertId) {
         TicketConcertResponse response = concertService.getConcertWithTickets(concertId);
 
+        return generateResponse(response, HttpStatus.OK, null);
+    }
+
+    @GetMapping
+    public ResponseEntity<ResultResponse<List<TicketConcertResponse>>> getAllConcertsWithTickets() {
+        List<TicketConcertResponse> response = concertService.getAllConcertsWithTickets();
         return generateResponse(response, HttpStatus.OK, null);
     }
 }

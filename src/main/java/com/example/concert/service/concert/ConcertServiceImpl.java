@@ -63,4 +63,32 @@ public class ConcertServiceImpl implements ConcertService {
 
         return response;
     }
+
+    @Override
+    public List<TicketConcertResponse> getAllConcertsWithTickets() {
+        return concertRepository.findAll().stream()
+                .map(concert -> {
+                    List<TicketResponse> tickets = ticketRepository.findByConcertId(concert.getId()).stream()
+                            .map(ticket -> {
+                                TicketResponse ticketResponse = new TicketResponse();
+                                ticketResponse.setId(ticket.getId());
+                                ticketResponse.setTicketClass(ticket.getTicketClass());
+                                ticketResponse.setTicketTotal(ticket.getTicketTotal());
+                                ticketResponse.setTicketAmount(ticket.getTicketAmount());
+                                return ticketResponse;
+                            })
+                            .collect(Collectors.toList());
+
+                    TicketConcertResponse response = new TicketConcertResponse();
+                    response.setConcertId(concert.getId());
+                    response.setConcertName(concert.getConcertName());
+                    response.setConcertDescription(concert.getConcertDescription());
+                    response.setConcertLocation(concert.getConcertLocation());
+                    response.setConcertDate(concert.getConcertDate());
+                    response.setTickets(tickets);
+
+                    return response;
+                })
+                .collect(Collectors.toList());
+    }
 }
