@@ -1,6 +1,7 @@
 package com.example.concert.service.concert;
 
 import com.example.concert.config.exception.AppException;
+import com.example.concert.config.exception.DataNotFoundException;
 import com.example.concert.model.entity.Concert;
 import com.example.concert.model.request.ConcertRequest;
 import com.example.concert.model.response.TicketConcertResponse;
@@ -40,7 +41,7 @@ public class ConcertServiceImpl implements ConcertService {
     @Override
     public TicketConcertResponse getConcertWithTickets(Long concertId) {
         Concert concert = concertRepository.findById(concertId)
-                .orElseThrow(() -> new IllegalArgumentException("Concert not found"));
+                .orElseThrow(() -> new DataNotFoundException("Concert not found"));
 
         List<TicketResponse> tickets = ticketRepository.findByConcertId(concertId).stream()
                 .map(ticket -> {

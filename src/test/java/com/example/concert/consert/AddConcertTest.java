@@ -4,6 +4,7 @@ import com.example.concert.config.exception.AppException;
 import com.example.concert.model.entity.Concert;
 import com.example.concert.model.request.ConcertRequest;
 import com.example.concert.repository.ConcertRepository;
+import com.example.concert.repository.TicketRepository;
 import com.example.concert.service.concert.ConcertServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,6 +20,9 @@ import static org.mockito.Mockito.when;
 class AddConcertTest {
     @Mock
     private ConcertRepository concertRepository;
+
+    @Mock
+    private TicketRepository ticketRepository;
 
     @InjectMocks
     private ConcertServiceImpl concertService;
