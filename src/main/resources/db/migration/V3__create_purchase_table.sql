@@ -1,4 +1,4 @@
-CREATE TABLE purchases (
+CREATE TABLE purchase (
     id INT AUTO_INCREMENT PRIMARY KEY,
     ticket_id INT NOT NULL,
     user_id INT NULL COMMENT 'In real life this field should not be null',
