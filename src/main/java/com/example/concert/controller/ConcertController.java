@@ -37,8 +37,10 @@ public class ConcertController extends AbstractResponseHandler {
     }
 
     @GetMapping
-    public ResponseEntity<ResultResponse<List<TicketConcertResponse>>> getAllConcertsWithTickets() {
-        List<TicketConcertResponse> response = concertService.getAllConcertsWithTickets();
+    public ResponseEntity<ResultResponse<List<TicketConcertResponse>>> getAllConcertsWithTickets(
+            @RequestParam(required = false) String concertName
+    ) {
+        List<TicketConcertResponse> response = concertService.getAllConcertsWithTickets(concertName);
         return generateResponse(response, HttpStatus.OK, null);
     }
 }

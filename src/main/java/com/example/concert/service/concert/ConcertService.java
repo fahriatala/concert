@@ -8,5 +8,5 @@ import java.util.List;
 public interface ConcertService {
     void addConcert(ConcertRequest request);
     TicketConcertResponse getConcertWithTickets(Long concertId);
-    List<TicketConcertResponse> getAllConcertsWithTickets();
+    List<TicketConcertResponse> getAllConcertsWithTickets(String name);
 }

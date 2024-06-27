@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -66,8 +67,15 @@ public class ConcertServiceImpl implements ConcertService {
     }
 
     @Override
-    public List<TicketConcertResponse> getAllConcertsWithTickets() {
-        return concertRepository.findAll().stream()
+    public List<TicketConcertResponse> getAllConcertsWithTickets(String name) {
+        List<Concert> listOfConcert;
+        if (name != null) {
+            listOfConcert = concertRepository.findByConcertNameContaining(name);
+        } else {
+            listOfConcert = concertRepository.findAll();
+        }
+
+        return listOfConcert.stream()
                 .map(concert -> {
                     List<TicketResponse> tickets = ticketRepository.findByConcertId(concert.getId()).stream()
                             .map(ticket -> {

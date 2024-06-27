@@ -14,6 +14,10 @@ This version of application requires the following dependencies
 Look at package resources -> db -> migration on the project. We are using flyway to migrate the database
 
 
+## Postman Documentation
+
+https://documenter.getpostman.com/view/1388924/2sA3dsnZmN
+
 ## How to Run
 
 While using Intellij IDE, simply just click Run Button.
