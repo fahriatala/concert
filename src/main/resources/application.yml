@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: concert
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/elevenia
+    username: fahriatala
+    password: fahriatala
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true

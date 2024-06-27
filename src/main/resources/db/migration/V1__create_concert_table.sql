@@ -1,0 +1,10 @@
+CREATE TABLE concert (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    concert_name VARCHAR(255) NOT NULL,
+    concert_description TEXT,
+    concert_location VARCHAR(255) NOT NULL,
+    concert_date DATETIME NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    deleted_at TIMESTAMP NULL
+);
