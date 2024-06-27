@@ -31,7 +31,7 @@ public class Ticket {
     private Integer ticketTotal;
 
     @Column(name = "ticket_amount")
-    private BigDecimal ticketAmount;
+    private Double ticketAmount;
 
     @Column(name = "ticket_purchase_start")
     private LocalDateTime ticketPurchaseStart;

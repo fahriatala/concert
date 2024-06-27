@@ -1,9 +1,10 @@
-package com.example.concert.service;
+package com.example.concert.service.concertService;
 
 import com.example.concert.config.exception.AppException;
 import com.example.concert.model.entity.Concert;
 import com.example.concert.model.request.ConcertRequest;
 import com.example.concert.repository.ConcertRepository;
+import com.example.concert.service.concertService.ConcertService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
