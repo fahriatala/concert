@@ -2,6 +2,7 @@ package com.example.concert.controller;
 
 import com.example.concert.config.base.AbstractResponseHandler;
 import com.example.concert.config.base.ResultResponse;
+import com.example.concert.config.ratelimiter.RateLimited;
 import com.example.concert.model.request.PurchaseRequest;
 import com.example.concert.service.purchase.PurchaseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ public class PurchaseController extends AbstractResponseHandler {
     private PurchaseService purchaseService;
 
     @PostMapping
+    @RateLimited(limit = 100, durationInSeconds = 1)
     public ResponseEntity<ResultResponse<Boolean>> purchaseTicket(@RequestBody PurchaseRequest request) {
         purchaseService.purchaseTicket(request.getTicketId());
 
