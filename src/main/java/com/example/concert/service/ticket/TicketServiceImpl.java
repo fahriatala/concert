@@ -36,6 +36,7 @@ public class TicketServiceImpl implements TicketService {
         ticket.setConcertId(request.getConcertId());
         ticket.setTicketClass(request.getTicketClass());
         ticket.setTicketTotal(request.getTicketTotal());
+        ticket.setTicketRemaining(request.getTicketTotal());
         ticket.setTicketAmount(request.getTicketAmount());
         ticket.setTicketPurchaseStart(request.getTicketPurchaseStart());
         ticket.setTicketPurchaseEnd(request.getTicketPurchaseEnd());

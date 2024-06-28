@@ -1,1 +1,1 @@
-ALTER TABLE ticket ADD COLUMN ticket_remaining INT;
+ALTER TABLE ticket ADD COLUMN ticket_remaining  INT NOT NULL;
