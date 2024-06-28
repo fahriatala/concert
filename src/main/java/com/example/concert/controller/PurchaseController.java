@@ -20,7 +20,7 @@ public class PurchaseController extends AbstractResponseHandler {
     private PurchaseService purchaseService;
 
     @PostMapping
-    @RateLimited(limit = 100, durationInSeconds = 1)
+    @RateLimited()
     public ResponseEntity<ResultResponse<Boolean>> purchaseTicket(@RequestBody PurchaseRequest request) {
         purchaseService.purchaseTicket(request.getTicketId());
 
